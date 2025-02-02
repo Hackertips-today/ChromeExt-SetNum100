@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Google Search Auto Modifier",
+  "version": "1.1",
+  "description": "Automatically sets num=100 in all Google search result pages.",
+  "permissions": ["tabs"],
+  "host_permissions": ["*://www.google.com/search*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/search*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
+
+
